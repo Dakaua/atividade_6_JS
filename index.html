@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <style>
+        section {
+            background-color: lightgray;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 12px;
+        }
+
+        #botao {
+
+            background-color: rgb(78, 78, 235);
+            margin: 0px;
+            border: 0px;
+            padding: 3px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CALCULADORA PARA O PREÇO DOS LIVROS</h1>
+
+    <section>
+        <h4>NÚMERO DE LIVROS</h4>
+
+        <input type="number" id="numLivros">
+        <h4>PREÇO POR LIVRO</h4>
+
+        <input type="number" id="preco">
+        <div>
+            <button id="botao" onclick="calcularValorTotal()">CALCULAR VALOR</button>
+        </div>
+
+    </section>
+    <section>
+        <h4>PREÇO TOTAL:</h4>
+        <p id="resposta">R$ 0,00</p>
+    </section>
+
+    <script>
+        function calcularValorTotal() {
+            // Substituindo o ponto por vírgula
+           
+
+            let numLivros = document.getElementById('numLivros').value
+            let preco = document.getElementById('preco').value
+
+            let texto = document.getElementById('resposta')
+
+            texto.textContent = "R$ " + (preco * numLivros).toFixed(2).replace('.', ',');
+        }
+
+    </script>
+</body>
+
+</html>
